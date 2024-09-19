@@ -73,7 +73,9 @@ and g3(w[2],s1,~s0,c);
 and g4(w[3],s1,s0,d);
 or g5(y,w[0],w[1],w[2],w[3]);
 endmodule
+
 ![Screenshot 2024-09-19 142001](https://github.com/user-attachments/assets/b4cf8150-0333-4ae3-8191-4f2096e167ed)
+
 
 
 4:1 MUX Data Flow Implementation
