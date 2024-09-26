@@ -80,44 +80,47 @@ Verilog Code
 
 4:1 MUX Data Flow Implementation
 
-// mux4_to_1_dataflow.v
-module mux4_to_1_dataflow (
-    input wire A,
-    input wire B,
-    input wire C,
-    input wire D,
-    input wire S0,
-    input wire S1,
-    output wire Y
-);
-    assign Y = (~S1 & ~S0 & A) |
-               (~S1 & S0 & B) |
-               (S1 & ~S0 & C) |
-               (S1 & S0 & D);
-endmodule
+    module mux4_to_1_dataflow (
+        input wire A,
+        input wire B,
+        input wire C,
+        input wire D,
+        input wire S1,
+        input wire S0,
+        output wire Y
+    );
+        assign Y = (~S1 & ~S0 & A) |
+                   (~S1 & S0 & B) |
+                   (S1 & ~S0 & C) |
+                   (S1 & S0 & D);
+    endmodule
+
+![Screenshot 2024-09-26 103220](https://github.com/user-attachments/assets/3797bb67-1eaf-4b2d-97a7-a920708b80b9)
 
 4:1 MUX Behavioral Implementation
 
-// mux4_to_1_behavioral.v
-module mux4_to_1_behavioral (
-    input wire A,
-    input wire B,
-    input wire C,
-    input wire D,
-    input wire S0,
-    input wire S1,
-    output reg Y
-);
+    module mux4_to_1_behavioral (
+        input wire A,
+        input wire B,
+        input wire C,
+        input wire D,
+        input wire S1,
+        input wire S0,
+        output reg Y
+    );
     always @(*) begin
         case ({S1, S0})
-            2'b00: Y = A;
-            2'b01: Y = B;
-            2'b10: Y = C;
-            2'b11: Y = D;
-            default: Y = 1'bx; // Undefined
-        endcase
-    end
-endmodule
+                2'b00: Y = A;
+                2'b01: Y = B;
+                2'b10: Y = C;
+                2'b11: Y = D;
+                default: Y = 1'bx; 
+            endcase
+         end
+    endmodule
+
+![Screenshot 2024-09-26 104106](https://github.com/user-attachments/assets/d610fe16-87fa-44f7-9d52-f900ba4cd65a)
+
 
 4:1 MUX Structural Implementation
 
