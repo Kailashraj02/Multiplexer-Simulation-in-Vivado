@@ -1,4 +1,4 @@
-SIMULATION AND IMPLEMENTATION OF LOGIC GATES
+![WhatsApp Image 2024-09-26 at 13 20 16_bd2a3c20](https://github.com/user-attachments/assets/d93b92e7-99ba-461a-a547-24ad7d0d479d)SIMULATION AND IMPLEMENTATION OF LOGIC GATES
 AIM:
 To design and simulate a 4:1 Multiplexer (MUX) using Verilog HDL in four different modeling styles—Gate-Level, Data Flow, Behavioral, and Structural—and to verify its functionality through a testbench using the Vivado 2023.1 simulation environment. The experiment aims to understand how different abstraction levels in Verilog can be used to describe the same digital logic circuit and analyze their performance.
 
@@ -124,19 +124,19 @@ Verilog Code
 
 4:1 MUX Structural Implementation
 
-// mux2_to_1.v
-module mux2_to_1 (
+
+    module mux2_to_1 (
     input wire A,
     input wire B,
     input wire S,
     output wire Y
-);
+    );
     assign Y = S ? B : A;
-endmodule
+    endmodule
 
 
-// mux4_to_1_structural.v
-module mux4_to_1_structural (
+
+    module mux4_to_1_structural (
     input wire A,
     input wire B,
     input wire C,
@@ -144,7 +144,7 @@ module mux4_to_1_structural (
     input wire S0,
     input wire S1,
     output wire Y
-);
+    );
     wire mux_low, mux_high;
 
     // Instantiate two 2:1 MUXes
@@ -153,7 +153,9 @@ module mux4_to_1_structural (
 
     // Instantiate the final 2:1 MUX
     mux2_to_1 mux_final (.A(mux_low), .B(mux_high), .S(S1), .Y(Y));
-endmodule
+    endmodule
+   ![Screenshot 2024-08-28 122946v1 png](https://github.com/user-attachments/assets/5f8a2a28-a3c8-4fee-9bc2-f52dbaa5838f)
+
 
 Testbench Implementation
 
