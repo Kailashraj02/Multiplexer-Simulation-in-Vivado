@@ -63,16 +63,16 @@ Verilog Code
 
 4:1 MUX Gate-Level Implementation
 
-module muxx(s1,s0,a,b,c,d,y);
-input s1,s0,a,b,c,d;
-output y;
-wire [3:0]w;
-and g1(w[0],~s1,~s0,a);
-and g2(w[1],~s1,s0,b);
-and g3(w[2],s1,~s0,c);
-and g4(w[3],s1,s0,d);
-or g5(y,w[0],w[1],w[2],w[3]);
-endmodule
+    module muxx(s1,s0,a,b,c,d,y);
+    input s1,s0,a,b,c,d;
+    output y;
+    wire [3:0]w;
+    and g1(w[0],~s1,~s0,a);
+    and g2(w[1],~s1,s0,b);
+    and g3(w[2],s1,~s0,c);
+    and g4(w[3],s1,s0,d);
+    or g5(y,w[0],w[1],w[2],w[3]);
+    endmodule
 
 ![Screenshot 2024-09-19 142001](https://github.com/user-attachments/assets/b4cf8150-0333-4ae3-8191-4f2096e167ed)
 
